@@ -10,15 +10,21 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### Usage
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Define a loading object in data:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```javascript
+data() {
+  return {
+    loading: {},
+  }
+}
+```
+- Invoke loading page:
+
+`this.loading = this.$loading()`
+
+- Close loading page:
+
+`this.loading.close()`

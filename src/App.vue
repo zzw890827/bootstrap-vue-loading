@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img :src="logoPath" alt="logo">
+    <h1>Hello Vue</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import logo from './assets/logo.png'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  beforeMount() {
+    this.loading = this.$loading();
+  },
+  mounted() {
+    setTimeout(() => this.loading.close(), 5000)
+  },
+  data() {
+    return {
+      loading: {},
+      logoPath: logo,
+    }
   }
 }
 </script>
